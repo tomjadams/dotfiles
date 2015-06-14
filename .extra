@@ -1,0 +1,4 @@
+alias cd..="cd ../"
+alias cp="cp -i"
+alias ll="ls -lF ${colorflag}"¬
+alias df="df -h"
