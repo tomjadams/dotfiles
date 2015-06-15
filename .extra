@@ -3,6 +3,9 @@ alias cp="cp -i"
 alias ll="ls -lF ${colorflag}"
 alias df="df -h"
 
+git config --global user.name "Tom Adams"
+git config --global user.email tomjadams@gmail.com
+
 source ~/.scripts/goku.sh
 source ~/.scripts/github-creds.sh
 
