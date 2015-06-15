@@ -1,3 +1,8 @@
+source ~/.scripts/goku.sh
+source ~/.scripts/github-creds.sh
+
+system_name=`uname -s`
+
 alias cd..="cd ../"
 alias cp="cp -i"
 alias ll="ls -lF ${colorflag}"
@@ -6,13 +11,12 @@ alias df="df -h"
 git config --global user.name "Tom Adams"
 git config --global user.email tomjadams@gmail.com
 
-source ~/.scripts/goku.sh
-source ~/.scripts/github-creds.sh
-
-system_name=`uname -s`
-
 # RedBubble Boxen¬
 source /opt/boxen/env.sh
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
 
 #export ARCHFLAGS='-arch x86_64'
 #export CC=/usr/local/bin/gcc-4.2
