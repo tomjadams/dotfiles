@@ -2,3 +2,66 @@ alias cd..="cd ../"
 alias cp="cp -i"
 alias ll="ls -lF ${colorflag}"
 alias df="df -h"
+
+source ~/.scripts/goku.sh
+source ~/.scripts/github-creds.sh
+
+system_name=`uname -s`
+
+# RedBubble Boxen¬
+source /opt/boxen/env.sh
+
+#export ARCHFLAGS='-arch x86_64'
+#export CC=/usr/local/bin/gcc-4.2
+export MAKEFLAGS='-j4'
+export HISTSIZE=1000000
+export FIGNORE="CVS:.swp:.DS_Store:.svn"
+#export JAVA_HOME=/Library/Java/Home
+
+export PATH=~/bin:/usr/local/mysql/bin:~/.cabal/bin:/usr/local/bin:/usr/local/sbin:${PATH}
+
+#export http_proxy=http://username:password@host:port/
+#export http_proxy=http://proxy.uq.net.au:80
+
+# disable the discard character (so ^O works in bash)
+stty discard undef
+
+# set the umask to something reasonable
+umask 007
+
+#shopt -s globstar
+
+bind "C-p":history-search-backward
+bind "C-n":history-search-forwardp
+bind "set show-all-if-ambiguous On"
+
+. ~/.aliases/git
+. ~/.aliases/svn
+. ~/.aliases/commands
+. ~/.aliases/oomph
+
+if [ -d ${HOME}/.rbenv ]; then
+  export PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
+
+export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Add GHC 7.8.4 to the PATH, via http://ghcformacosx.github.io/
+export GHC_DOT_APP="/Applications/GHC.app"
+if [ -d "$GHC_DOT_APP" ]; then
+    export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
+fi
+
+# Docker
+$(boot2docker shellinit > /dev/null 2> /dev/null)
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/opt/google-cloud-sdk/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/opt/google-cloud-sdk/google-cloud-sdk/completion.bash.inc'
+

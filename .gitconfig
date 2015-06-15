@@ -1,4 +1,9 @@
 [alias]
+	ci = commit
+	st = status -sb
+	co = checkout
+	log = log --oneline --decorate
+	pr = pull-request
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -101,6 +106,9 @@
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
 
 [color "branch"]
 
@@ -121,6 +129,13 @@
 	changed = green
 	untracked = cyan
 
+[core]
+	autocrlf = input
+	excludesfile = /opt/boxen/config/git/gitignore
+
+#[credential]
+#	helper = /opt/boxen/bin/boxen-git-credential
+
 [diff]
 
 	# Detect copies as well as renames
@@ -131,10 +146,16 @@
 	# Automatically correct and execute mistyped commands
 	autocorrect = 1
 
+[hub]
+	protocol = https
+
 [merge]
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+[pull]
+	rebase = preserve
 
 [push]
 
@@ -166,3 +187,7 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[user]
+	name = Tom Adams
+	email = tomjadams@gmail.com
