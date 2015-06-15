@@ -38,11 +38,6 @@ bind "C-p":history-search-backward
 bind "C-n":history-search-forwardp
 bind "set show-all-if-ambiguous On"
 
-. ~/.aliases/git
-. ~/.aliases/svn
-. ~/.aliases/commands
-. ~/.aliases/oomph
-
 if [ -d ${HOME}/.rbenv ]; then
   export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
