@@ -36,7 +36,7 @@
 
 # Find a project in various directories. Change them to whatever suits you
 function fp() {
- echo `find $HOME/src $HOME/src/disaster-recovery $HOME/Projects/Cogent $HOME/Projects/Oomph $HOME/Projects/Pelofy $HOME/Projects/Personal $HOME/Projects/open_source -maxdepth 1 | grep /\[\^/\]\*$1\
+ echo `find $HOME/src $HOME/Projects/Liege $HOME/src/disaster-recovery $HOME/Projects/Cogent $HOME/Projects/Oomph $HOME/Projects/Pelofy $HOME/Projects/Personal $HOME/Projects/open_source -maxdepth 1 | grep /\[\^/\]\*$1\
 \[\^/\]\*$ | head -n 1`
 }
 
