@@ -7,7 +7,6 @@ alias cd..="cd ../"
 alias cp="cp -i"
 alias ll="ls -lF ${colorflag}"
 alias df="df -h"
-alias docker-init="eval \"$(docker-machine env redbubble)\""
 
 git config --global user.name "Tom Adams"
 git config --global user.email tomjadams@gmail.com
@@ -64,4 +63,6 @@ source '/opt/google-cloud-sdk/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
 source '/opt/google-cloud-sdk/google-cloud-sdk/completion.bash.inc'
+
+alias rb-dm="source ~/bin/machine-status.sh redbubble"
 
