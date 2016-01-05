@@ -66,3 +66,4 @@ source '/opt/google-cloud-sdk/google-cloud-sdk/completion.bash.inc'
 
 alias rb-dm="source ~/bin/machine-status.sh redbubble"
 
+eval $(/opt/boxen/homebrew/bin/docker-machine env local)
